@@ -1,38 +1,72 @@
-.App {
-  text-align: center;
+* {
+  margin:0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap');
+
+:root {
+  --veryLightGray: hsl(0, 0%, 98%);
+  --veryLightGrayishBlue: hsl(236, 33%, 92%);
+  --lightGrayishBlue: hsl(233, 11%, 84%);
+  --darkGrayishBlue: hsl(236, 9%, 61%);
+  --veryDarkGrayishBlue: hsl(235, 19%, 35%);
+
+/* Dark Theme */
+
+--veryDarkBlue: hsl(235, 21%, 11%);
+--veryDarkDesaturatedBlue: hsl(235, 24%, 19%);
+--lightGrayishBlue: hsl(234, 39%, 85%);
+--lightGrayishBlue: (hover): hsl(236, 33%, 92%);
+--darkGrayishBlue: #777a92;
+--veryDarkGrayishBlue: hsl(233, 14%, 35%);
+--veryDarkGrayishBlue: hsl(237, 14%, 26%);
+}
+html {
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 18px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+body {
+  background-color: var(--veryDarkBlue);
+  background-image: url('./images/bg-desktop-dark.jpg');
+  background-repeat: no-repeat;
+  background-position: 100% -20%;
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+
+.wrapper {
+  height: 100vh;
+  display: flex;
+  
+  flex-direction: column;
+  
+  
+}
+
+h1 {
+  font-weight: 400;
+  letter-spacing: 1rem;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.container {
+  width: 450px;
+  transform: translateY(5rem);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+@media(max-width: 500px) {
+
+  body {
+    background-image: url('./images/bg-mobile-dark.jpg');
+    background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: 100% -20%;
   }
-  to {
-    transform: rotate(360deg);
+  .container{
+    width: 350px;
+   
   }
 }

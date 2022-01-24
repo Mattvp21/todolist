@@ -1,0 +1,31 @@
+ .item {
+    max-width: 100%;
+    width: 100%;
+    outline: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    background-color: hsl(235, 24%, 19%);
+    border: none;
+    color: hsl(233, 14%, 35%);
+    font-family: inherit;
+    text-align: center;
+    border-bottom: solid 1px #777a92;
+
+    &__todo {
+        font-size: 1.25rem;
+        margin-right: auto;
+        color: hsl(234, 39%, 85%)
+    }
+ }   
+    
+ .check {
+    border: 1px solid hsl(233, 14%, 35%);
+    border-radius: 100px;
+    width: 20px;
+    height: 20px;
+    margin-right: auto; 
+    
+ }

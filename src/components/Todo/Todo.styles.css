@@ -1,0 +1,39 @@
+.item {
+  max-width: 100%;
+  width: 100%;
+  outline: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 1rem;
+  background-color: #25273c;
+  border: none;
+  color: #4d5066;
+  font-family: inherit;
+  text-align: center;
+  border-bottom: solid 1px #777a92;
+}
+
+.item__todo {
+  font-size: 1.25rem;
+  margin-right: auto;
+  color: #cacde8;
+}
+
+.check {
+  border: 1px solid #4d5066;
+  border-radius: 100px;
+  width: 20px;
+  height: 20px;
+  margin-right: auto;
+  
+}
+/*# sourceMappingURL=Todo.styles.css.map */

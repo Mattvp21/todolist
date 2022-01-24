@@ -1,0 +1,34 @@
+.bar {
+  max-width: 100%;
+  width: 100%;
+  outline: none;
+  padding: .5rem;
+  background-color: #25273c;
+  border: none;
+  color: #4d5066;
+  font-family: inherit;
+  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.bar__count {
+  font-size: .75rem;
+}
+
+.bar__button {
+  background: none;
+  border: none;
+  color: #4d5066;
+  outline: none;
+  cursor: pointer;
+  font-size: .75rem;
+}
+
+.bar__button:hover {
+  color: #cacde8;
+}
+/*# sourceMappingURL=StatusBar.styles.css.map */

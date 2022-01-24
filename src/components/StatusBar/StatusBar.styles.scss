@@ -1,0 +1,37 @@
+.bar {
+    max-width: 100%;
+    width: 100%;
+    outline: none;
+    padding: .5rem;
+    background-color: hsl(235, 24%, 19%);
+    border: none;
+    color: hsl(233, 14%, 35%);
+    font-family: inherit;
+    text-align: center;
+    display: flex;
+    justify-content: space-around;
+    
+    
+    &__count {
+        font-size: .75rem;
+    }
+
+    &__button {
+        background: none;
+        border: none;
+        color: hsl(233, 14%, 35%);
+        outline: none;
+        cursor: pointer;
+        font-size: .75rem;
+        transition: ease-in .25s;
+        
+
+        &:hover {
+            color: hsl(234, 39%, 85%);
+        }
+
+    
+    }
+
+   
+}
