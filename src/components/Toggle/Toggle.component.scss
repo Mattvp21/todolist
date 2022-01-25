@@ -1,2 +1,12 @@
-
+.checkbox {
+   position: absolute;
+   top: 2rem;
+   right: .5rem;
+   z-index: 1;
+   outline: none;
+   background-color: transparent;
+   cursor: pointer;
+   opacity: 0;
+   
+}
 

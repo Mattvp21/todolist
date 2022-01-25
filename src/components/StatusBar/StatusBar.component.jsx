@@ -1,7 +1,7 @@
 import React from 'react'
 import './StatusBar.styles.scss'
 
-const StatusBar = () => {
+const StatusBar = ({todo}) => {
     return (
         <div className='bar'>
             <p className='bar__count'>0 items left</p>

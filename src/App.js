@@ -11,14 +11,21 @@ import Toggle from './components/Toggle/Toggle.component';
 function App() {
 
   const [todos, setTodos] = useState([])
+  const [darkMode, setDarkMode] = useState({
+    isDarkmode: true
+  })
 
   const addTodo = (todo) => {
     setTodos([todo, ...todos])
   }
+
+  const toggleDarkMode = (darkMode) => {
+    setDarkMode({...darkMode, isDarkmode: false})
+  }
   return(
     <div className='wrapper'>
       <div className='container'>
-      <Toggle/>
+      <Toggle toggle={toggleDarkMode}/>
       <Createtodo addTodo={addTodo}/>
       <TodoList  todos={todos}/>
       <StatusBar />
