@@ -17,16 +17,31 @@ function App() {
 });
   
 
+
 const isChecked = (e) => {
     let checkedBox = e.target;
-    if(checkedBox.checked) {
+    
+      if(checkedBox.checked) {
         setChecked({check, isChecked:true})
     } else {
         setChecked({check, isChecked:false})
-    }
+    }    
     
 }
 
+const handleComplete = (id) => {
+  setTodos(
+    todos.map(todo => {
+      if(todo.id === id) {
+        return {
+          ...todo,
+          completed:!todo.completed
+        }
+      }
+      return todo
+    })
+  )
+}
 
 
   
@@ -61,7 +76,7 @@ const isChecked = (e) => {
       addTodo={addTodo}/>
       <TodoList 
       setTodos={setTodos} 
-      
+      handleComplete={handleComplete}
       check={check}
       isChecked={isChecked}
       todos={todos}/>

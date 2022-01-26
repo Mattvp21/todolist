@@ -20,7 +20,15 @@
     height: 20px;
     margin-right: auto; 
     transform: translate(1rem, 1rem);
+    
    
+
+    &__box {
+       position: absolute;
+       transform: translate(-.40rem, .18rem);
+       cursor: pointer;
+       opacity: 0;
+    }
  }
 
  li {

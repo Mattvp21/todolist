@@ -1,7 +1,8 @@
-import React from 'react'
+import React, {useState} from 'react'
 import './StatusBar.styles.scss'
 
 const StatusBar = ({todo, check, isChecked}) => {
+   
     return (
         <div className='bar'
         style={{backgroundColor: check.isChecked ? 'hsl(236, 9%, 61%)' : 'hsl(235, 24%, 19%)',
