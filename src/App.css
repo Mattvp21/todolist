@@ -59,11 +59,11 @@ h1 {
 @media(max-width: 500px) {
 
   main {
-    
+    background-image: url(./images/bg-mobile-dark.jpg);
+    background-repeat: no-repeat;
+    background-position: 100% -20%;
     background-size: 100%;
-  background-repeat: no-repeat;
-  background-position: 100% -20%;
-  }
+  } 
   .container{
     width: 350px;
    

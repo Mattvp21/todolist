@@ -7,8 +7,8 @@ import StatusBar from './components/StatusBar/StatusBar.component';
 
 import TodoList from './components/TodoList/TodoList.component';
 import Toggle from './components/Toggle/Toggle.component';
-
-
+import darkMode from './images/bg-desktop-dark.jpg';
+import lightMode from './images/bg-desktop-light.jpg';
 function App() {
 
   const [todos, setTodos] = useState([]);
@@ -28,6 +28,7 @@ const isChecked = (e) => {
 }
 
 
+
   
 
   const addTodo = (todo) => {
@@ -37,12 +38,18 @@ const isChecked = (e) => {
   
   
   return(
-  <main style={{backgroundColor: check.isChecked ? 'white' : 'hsl(235, 21%, 11%)'
-               // backgroundImage: check.isChecked ? "url(./images/bg-desktop-light.jpg)" : "url(./images/bg-desktop-dark.jpg)"
+  <main style={{backgroundColor: check.isChecked ? 'white' : 'hsl(235, 21%, 11%)',
+               backgroundImage: check.isChecked ? `url(${lightMode})` : `url(${darkMode})`,
+                backgroundRepeat: 'no-repeat',
+                backgroundPosition: '100% -20%',
+                display: 'flex',
+                justifyContent: 'center',
+                transition: 'ease-in .3s'
                }
             }>
    
     <div className='wrapper'>
+            
       <div className='container'>
       <Toggle 
       check={check}
@@ -52,7 +59,9 @@ const isChecked = (e) => {
       check={check}
       isChecked={isChecked}
       addTodo={addTodo}/>
-      <TodoList  
+      <TodoList 
+      setTodos={setTodos} 
+      
       check={check}
       isChecked={isChecked}
       todos={todos}/>
