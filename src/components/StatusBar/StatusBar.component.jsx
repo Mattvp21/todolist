@@ -1,14 +1,16 @@
 import React from 'react'
 import './StatusBar.styles.scss'
 
-const StatusBar = ({todo}) => {
+const StatusBar = ({todo, check, isChecked}) => {
     return (
-        <div className='bar'>
+        <div className='bar'
+        style={{backgroundColor: check.isChecked ? 'hsl(236, 9%, 61%)' : 'hsl(235, 24%, 19%)',
+            color: check.isChecked ? 'hsl(235, 19%, 35%)' : 'hsl(233, 11%, 52%)'}}>
             <p className='bar__count'>0 items left</p>
                 
-                <button style={{marginLeft:'2rem'}} className='bar__button'>All</button>
+                <button style={{transform: 'translateX(.5rem)'}} className='bar__button'>All</button>
                 <button className='bar__button'>Active</button>
-                <button style={{marginRight:'2rem'}} className='bar__button'>Completed</button>
+                <button style={{transform: 'translateX(-.5rem)'}} className='bar__button'>Completed</button>
                 <button className='bar__button'>Clear Completed</button>
             
             

@@ -1,15 +1,16 @@
 import React from 'react';
-import { Fragment } from 'react/cjs/react.production.min';
 import Todo from '../Todo/Todo.component';
 
 
 
-const TodoList = ({todos}) => {
+const TodoList = ({todos, check, isChecked}) => {
     return (
+
         <div className='list'>
             <ul >
            {todos.map((todo, i) => {
-               return <Todo key={[i]} todo={todo} />
+               
+               return <Todo check={check} isChecked={isChecked} key={[i]} todo={todo} />
            })}
             
             </ul>

@@ -2,7 +2,7 @@
     max-width: 100%;
     width: 100%;
     outline: none;
-    padding: .5rem;
+    padding: 1rem;
     background-color: hsl(235, 24%, 19%);
     border: none;
     color: hsl(233, 14%, 35%);
@@ -34,4 +34,19 @@
     }
 
    
+}
+
+@media(max-width:500px) {
+   
+    .bar{
+        padding: .75rem;
+    }
+
+   .bar__button:first-of-type {
+        margin-right: 1rem;
+   }
+
+   .bar__button:nth-of-type(3) {
+    margin-left: 1rem;
+}
 }

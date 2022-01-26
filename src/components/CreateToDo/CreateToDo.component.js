@@ -3,12 +3,12 @@ import './CreateToDo.styles.css'
 import { v4 as uuidv4 } from 'uuid';
 import { Fragment } from 'react/cjs/react.production.min';
 
-const Createtodo = ({addTodo}) => {
+const Createtodo = ({addTodo, isChecked, check}) => {
 
     const [todos, setTodos] = useState({
         id: '',
         task:'',
-        completed: '',
+        completed: false,
     })
 
     const handleChange = (e) => {
@@ -27,6 +27,8 @@ const Createtodo = ({addTodo}) => {
         <Fragment>
             <form onSubmit={handleSubmit}>
             <input 
+            style={{backgroundColor: check.isChecked ? 'hsl(236, 9%, 61%)' : 'hsl(235, 24%, 19%)',
+            color: check.isChecked ? 'hsl(235, 19%, 35%)' : 'hsl(233, 11%, 52%)'}}
             onChange={handleChange}
             className="todo-Input" 
             type='text' 

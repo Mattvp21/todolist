@@ -19,7 +19,7 @@
 --veryDarkDesaturatedBlue: hsl(235, 24%, 19%);
 --lightGrayishBlue: hsl(234, 39%, 85%);
 --lightGrayishBlue: (hover): hsl(236, 33%, 92%);
---darkGrayishBlue: #777a92;
+--darkGrayishBlue: hsl(233, 11%, 52%);
 --veryDarkGrayishBlue: hsl(233, 14%, 35%);
 --veryDarkGrayishBlue: hsl(237, 14%, 26%);
 }
@@ -28,9 +28,8 @@ html {
   font-size: 18px;
 }
 
-body {
-  background-color: var(--veryDarkBlue);
-  background-image: url('./images/bg-desktop-dark.jpg');
+main {
+  background-image: url(./images/bg-desktop-dark.jpg);
   background-repeat: no-repeat;
   background-position: 100% -20%;
   display: flex;
@@ -59,8 +58,8 @@ h1 {
 
 @media(max-width: 500px) {
 
-  body {
-    background-image: url('./images/bg-mobile-dark.jpg');
+  main {
+    
     background-size: 100%;
   background-repeat: no-repeat;
   background-position: 100% -20%;

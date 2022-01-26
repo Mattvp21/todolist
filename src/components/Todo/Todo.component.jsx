@@ -3,9 +3,11 @@ import './Todo.styles.scss'
 import {ReactComponent as Checkmark} from '../../images/icon-check.svg'
 
 
-const Todo = ({todo}) => {
+const Todo = ({todo, check, isChecked}) => {
     return (
-    <div className='item'>
+    <div className='item'
+        style={{backgroundColor: check.isChecked ? 'hsl(236, 9%, 61%)' : 'hsl(235, 24%, 19%)',
+            color: check.isChecked ? 'hsl(235, 19%, 35%)' : 'hsl(233, 11%, 52%)'}}>
         <li >
             <div className='check'>
                 <Checkmark />

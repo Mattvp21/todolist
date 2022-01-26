@@ -1,25 +1,13 @@
-import React, {useState} from 'react';
+import React from 'react';
 import {ReactComponent as DarkToggleButton} from '../../images/icon-moon.svg'
 import {ReactComponent as LightToggleButton} from '../../images/icon-sun.svg'
 import './Toggle.component.scss'
 
 
 
-const Toggle = ({toggleDarkMode}) => {
+const Toggle = ({isChecked, check, setChecked}) => {
 
-    const [check, setChecked] = useState({
-        isChecked: false
-    })
-
-    const isChecked = (e) => {
-        let checkedBox = e.target;
-        if(checkedBox.checked) {
-            setChecked({check, isChecked:true})
-        } else {
-            setChecked({check, isChecked:false})
-        }
-        
-    }
+   
     return (
        
             
