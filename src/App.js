@@ -9,26 +9,51 @@ import TodoList from './components/TodoList/TodoList.component';
 import Toggle from './components/Toggle/Toggle.component';
 import darkMode from './images/bg-desktop-dark.jpg';
 import lightMode from './images/bg-desktop-light.jpg';
+
+
+const ALL = 0;
+const ACTIVE = 1;
+const COMPLETED = 2;
+
 function App() {
 
   const [todos, setTodos] = useState([]);
   const [check, setChecked] = useState({
     isChecked: false
 });
-  const [active, setActive] = useState([])
-  const [complete, setComplete] = useState([])
+const [tab, setTab] = useState(ALL);
 
-const handleActiveButton = () => {
-  setActive(todos.filter((todo) => todo.completed === false))
-}
-  
- 
+const visibleTodos = todos.filter((todo) => {
+  switch (tab) {
+    case ACTIVE:
+      return !todo.completed;
+    case COMPLETED:
+      return todo.completed;
+    default:
+      return todo;
+  }
+});
 
 const handleCompleteButton = () => {
-  setComplete(
-   todos.filter((todo) => todo.completed === true)
-  )
-} 
+  setTab(COMPLETED);
+};
+
+const handleActiveButton = () => {
+  setTab(ACTIVE);
+};
+
+const handleAllButton = () => {
+  setTab(ALL);
+};
+
+const clearCompleted = () => {
+  setTodos(todos.filter((todo) => todo.completed === false))
+}
+
+
+
+
+
 
 
 const isChecked = (e) => {
@@ -64,6 +89,11 @@ const handleComplete = (id) => {
   }
 
   
+    
+ 
+
+
+  
   
   return(
   <main style={{backgroundColor: check.isChecked ? 'white' : 'hsl(235, 21%, 11%)',
@@ -89,22 +119,19 @@ const handleComplete = (id) => {
       addTodo={addTodo}/>
 
       <TodoList 
-      
+        todos={visibleTodos}
       setTodos={setTodos} 
       handleComplete={handleComplete}
       check={check}
       isChecked={isChecked}
-      todos={todos}/>
+      />
       <StatusBar
-      todos={todos}
-      setTodos={setTodos}
+      todosLength={todos.length}
       check={check}
-      setChecked={setChecked}
-      isChecked={isChecked} 
-      handleCompleteButton={handleCompleteButton} 
-      handleActiveButton={handleActiveButton}   
-      active={active}
-      complete={complete}
+      handleAllButton={handleAllButton}
+      handleCompleteButton={handleCompleteButton}
+      handleActiveButton={handleActiveButton}
+      clearCompleted={clearCompleted}
       />
       
       </div>
