@@ -16,6 +16,7 @@ const TodoList = ({todos, check, isChecked, setTodos, handleComplete}) => {
                todo={todo}
                handleComplete={handleComplete}
                 setTodos={setTodos}
+                
                />
            })}
             

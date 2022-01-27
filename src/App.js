@@ -15,7 +15,20 @@ function App() {
   const [check, setChecked] = useState({
     isChecked: false
 });
+  const [active, setActive] = useState([])
+  const [complete, setComplete] = useState([])
+
+const handleActiveButton = () => {
+  setActive(todos.filter((todo) => todo.completed === false))
+}
   
+ 
+
+const handleCompleteButton = () => {
+  setComplete(
+   todos.filter((todo) => todo.completed === true)
+  )
+} 
 
 
 const isChecked = (e) => {
@@ -74,18 +87,26 @@ const handleComplete = (id) => {
       check={check}
       isChecked={isChecked}
       addTodo={addTodo}/>
+
       <TodoList 
+      
       setTodos={setTodos} 
       handleComplete={handleComplete}
       check={check}
       isChecked={isChecked}
       todos={todos}/>
       <StatusBar
-      
+      todos={todos}
+      setTodos={setTodos}
       check={check}
       setChecked={setChecked}
-      isChecked={isChecked} />
-
+      isChecked={isChecked} 
+      handleCompleteButton={handleCompleteButton} 
+      handleActiveButton={handleActiveButton}   
+      active={active}
+      complete={complete}
+      />
+      
       </div>
      
     </div>
