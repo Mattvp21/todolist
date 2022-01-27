@@ -5,7 +5,7 @@ import './Toggle.component.scss'
 
 
 
-const Toggle = ({isChecked, check, setChecked}) => {
+const Toggle = ({isChecked, check}) => {
 
    
     return (
