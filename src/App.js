@@ -50,12 +50,6 @@ const clearCompleted = () => {
   setTodos(todos.filter((todo) => todo.completed === false))
 }
 
-
-
-
-
-
-
 const isChecked = (e) => {
     let checkedBox = e.target;
     
@@ -85,51 +79,56 @@ const addTodo = (todo) => {
   setTodos([todo, ...todos])
 } 
   
-  
   return(
-  <main style={{backgroundColor: check.isChecked ? 'white' : 'hsl(235, 21%, 11%)',
-               backgroundImage: check.isChecked ? `url(${lightMode})` : `url(${darkMode})`,
-                backgroundRepeat: 'no-repeat',
-                backgroundPosition: '100% -20%',
-                display: 'flex',
-                justifyContent: 'center',
-                transition: 'ease-in .3s'
-               }
-            }>
-   
-    <div className='wrapper'>
-            
-      <div className='container'>
-      <Toggle 
-      check={check}
-      setChecked={setChecked}
-      isChecked={isChecked}/>
-      <Createtodo 
-      check={check}
-      isChecked={isChecked}
-      addTodo={addTodo}/>
+    <main style={{backgroundColor: check.isChecked ? 'white' : 'hsl(235, 21%, 11%)',
+                  backgroundImage: check.isChecked ? `url(${lightMode})` : `url(${darkMode})`,
+                  backgroundRepeat: 'no-repeat',
+                  backgroundPosition: '100% -20%',
+                  display: 'flex',
+                  justifyContent: 'center',
+                  transition: 'ease-in .3s'
+                  }
+                }
+    >
+    
+      <div className='wrapper'>
+              
+        <div className='container'>
 
-      <TodoList 
-        todos={visibleTodos}
-      setTodos={setTodos} 
-      handleComplete={handleComplete}
-      check={check}
-      isChecked={isChecked}
-      />
-      <StatusBar
-      todosLength={todos.length}
-      check={check}
-      handleAllButton={handleAllButton}
-      handleCompleteButton={handleCompleteButton}
-      handleActiveButton={handleActiveButton}
-      clearCompleted={clearCompleted}
-      />
+          <Toggle 
+          check={check}
+          setChecked={setChecked}
+          isChecked={isChecked}        
+          />
+
+          <Createtodo 
+            check={check}
+            isChecked={isChecked}
+            addTodo={addTodo}            
+          />
+
+          <TodoList 
+            todos={visibleTodos}
+            setTodos={setTodos} 
+            handleComplete={handleComplete}
+            check={check}
+            isChecked={isChecked}
+          />
+
+          <StatusBar
+            todosLength={todos.length}
+            check={check}
+            handleAllButton={handleAllButton}
+            handleCompleteButton={handleCompleteButton}
+            handleActiveButton={handleActiveButton}
+            clearCompleted={clearCompleted}
+          />
+        
+        </div>
       
       </div>
-     
-    </div>
 
-  </main>
+    </main>
     
 
   )

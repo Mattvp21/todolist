@@ -10,25 +10,25 @@ const Todo = ({todo, check, isChecked, setTodos, handleComplete}) => {
         handleComplete(todo.id)
     }
     return (
-    <div className='item'
-        style={{backgroundColor: check.isChecked ? 'hsl(236, 9%, 61%)' : 'hsl(235, 24%, 19%)',
-            color: check.isChecked ? 'hsl(235, 19%, 35%)' : 'hsl(233, 11%, 52%)',
-            transition: 'ease-in .3s'}}>
-        <li style={{textDecoration: todo.completed ?  
-        'line-through' : 'none'
-        }}>
-            <div style={{backgroundImage: todo.completed ? 'linear-gradient( rgb(85, 0, 255), rgb(117, 0, 128))' : 'none'}} className='check'>
-             {todo.completed ?  <Checkmark  /> : ''}  
-                <input onChange={handleCheckbox} className='check__box' type='checkbox' />
-            </div>
+        <div className='item'
+            style={{backgroundColor: check.isChecked ? 'hsl(236, 9%, 61%)' : 'hsl(235, 24%, 19%)',
+                color: check.isChecked ? 'hsl(235, 19%, 35%)' : 'hsl(233, 11%, 52%)',
+                transition: 'ease-in .3s'}}>
+            <li style={{textDecoration: todo.completed ?  
+            'line-through' : 'none'
+            }}>
+                <div style={{backgroundImage: todo.completed ? 'linear-gradient( rgb(85, 0, 255), rgb(117, 0, 128))' : 'none'}} className='check'>
+                {todo.completed ?  <Checkmark  /> : ''}  
+                    <input onChange={handleCheckbox} className='check__box' type='checkbox' />
+                </div>
+                
+                {todo.task}
             
-            {todo.task}
-           
-        </li>
+            </li>
 
-    </div>
-        
-    )
+        </div>
+            
+        )
 }
 
 export default Todo
