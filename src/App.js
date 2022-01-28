@@ -79,20 +79,11 @@ const handleComplete = (id) => {
       return todo
     })
   )
-}
+} 
 
-
-  
-
-  const addTodo = (todo) => {
-    setTodos([todo, ...todos])
-  }
-
-  
-    
- 
-
-
+const addTodo = (todo) => {
+  setTodos([todo, ...todos])
+} 
   
   
   return(

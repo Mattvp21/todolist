@@ -5,11 +5,10 @@ import './Toggle.component.scss'
 
 
 
-const Toggle = ({isChecked, check, setChecked}) => {
+const Toggle = ({isChecked, check}) => {
 
    
-    return (
-       
+    return (      
             
         <div className='toggle-container'> 
             <h1 style={ {clear:'left'}}>TODO</h1>
@@ -18,12 +17,9 @@ const Toggle = ({isChecked, check, setChecked}) => {
             { check.isChecked ? <LightToggleButton style={{marginRight: 'auto', float:'right', transform: 'translateY(-3.5rem)'}}/>
             :<DarkToggleButton style={{marginRight: 'auto', float:'right', transform: 'translateY(-3.5rem)'}}/>
            }
-            </div>
+            </div>            
             
-            
-        </div>
-
-       
+        </div>       
         
     )
 }

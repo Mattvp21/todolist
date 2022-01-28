@@ -1,14 +1,11 @@
-import React, {useState} from 'react'
+import React from 'react'
 import './StatusBar.styles.scss'
 
 const StatusBar = ({check, todosLength,handleAllButton, handleActiveButton, handleCompleteButton, clearCompleted}) => {
   
     const handleClear = () => {
         clearCompleted()
-    }
-    
-
-    
+    }    
    
     return (
         <div className='bar'

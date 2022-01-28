@@ -26,15 +26,16 @@ const Createtodo = ({addTodo, isChecked, check}) => {
     return (
         <Fragment>
             <form onSubmit={handleSubmit}>
-            <input 
-            style={{backgroundColor: check.isChecked ? 'hsl(236, 9%, 61%)' : 'hsl(235, 24%, 19%)',
-            color: check.isChecked ? 'hsl(235, 19%, 35%)' : 'hsl(233, 11%, 52%)'}}
-            onChange={handleChange}
-            className="todo-Input" 
-            type='text' 
-            name='task'
-            value={todos.task}
-            placeholder="Create a new todo" />
+                <input 
+                    style={{backgroundColor: check.isChecked ? 'hsl(236, 9%, 61%)' : 'hsl(235, 24%, 19%)',
+                    color: check.isChecked ? 'hsl(235, 19%, 35%)' : 'hsl(233, 11%, 52%)'}}
+                    onChange={handleChange}
+                    className="todo-Input" 
+                    type='text' 
+                    name='task'
+                    value={todos.task}
+                    placeholder="Create a new todo" 
+                />
             </form>
         </Fragment>
         

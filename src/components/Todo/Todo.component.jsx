@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './Todo.styles.scss'
 import {ReactComponent as Checkmark} from '../../images/icon-check.svg'
 
