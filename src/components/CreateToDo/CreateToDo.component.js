@@ -3,7 +3,7 @@ import './CreateToDo.styles.css'
 import { v4 as uuidv4 } from 'uuid';
 import { Fragment } from 'react/cjs/react.production.min';
 
-const Createtodo = ({addTodo, isChecked, check}) => {
+const Createtodo = ({addTodo, check}) => {
 
     const [todos, setTodos] = useState({
         id: '',
@@ -39,9 +39,7 @@ const Createtodo = ({addTodo, isChecked, check}) => {
             </form>
         </Fragment>
         
-    )
-    
-    
+    )    
     
 }
 

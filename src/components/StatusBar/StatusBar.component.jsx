@@ -17,8 +17,7 @@ const StatusBar = ({check, todosLength,handleAllButton, handleActiveButton, hand
                 <button onClick={handleAllButton} style={{transform: 'translateX(.5rem)'}} className='bar__button'>All</button>
                 <button onClick={handleActiveButton}  className='bar__button'>Active</button>
                 <button onClick={handleCompleteButton} style={{transform: 'translateX(-.5rem)'}} className='bar__button'>Completed</button>
-                <button onClick={handleClear} className='bar__button'>Clear Completed</button>
-            
+                <button onClick={handleClear} className='bar__button'>Clear Completed</button>            
             
         </div>
     )

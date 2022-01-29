@@ -96,9 +96,9 @@ const addTodo = (todo) => {
         <div className='container'>
 
           <Toggle 
-          check={check}
-          setChecked={setChecked}
-          isChecked={isChecked}        
+            check={check}
+            setChecked={setChecked}
+            isChecked={isChecked}        
           />
 
           <Createtodo 
