@@ -3,7 +3,7 @@ import Todo from '../Todo/Todo.component';
 
 
 
-const TodoList = ({todos, check, isChecked, setTodos, handleComplete, visableTodos}) => {
+const TodoList = ({todos, check, isChecked, setTodos, handleComplete}) => {
     return (
 
         <div className='list'>
