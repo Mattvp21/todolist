@@ -1,14 +1,11 @@
-import React, {useState} from 'react'
+import React from 'react'
 import './StatusBar.styles.scss'
 
 const StatusBar = ({check, todosLength,handleAllButton, handleActiveButton, handleCompleteButton, clearCompleted}) => {
   
     const handleClear = () => {
         clearCompleted()
-    }
-    
-
-    
+    }    
    
     return (
         <div className='bar'
@@ -20,8 +17,7 @@ const StatusBar = ({check, todosLength,handleAllButton, handleActiveButton, hand
                 <button onClick={handleAllButton} style={{transform: 'translateX(.5rem)'}} className='bar__button'>All</button>
                 <button onClick={handleActiveButton}  className='bar__button'>Active</button>
                 <button onClick={handleCompleteButton} style={{transform: 'translateX(-.5rem)'}} className='bar__button'>Completed</button>
-                <button onClick={handleClear} className='bar__button'>Clear Completed</button>
-            
+                <button onClick={handleClear} className='bar__button'>Clear Completed</button>            
             
         </div>
     )

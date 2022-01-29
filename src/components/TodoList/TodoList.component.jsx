@@ -7,21 +7,19 @@ const TodoList = ({todos, check, isChecked, setTodos, handleComplete}) => {
     return (
 
         <div className='list'>
-            <ul >
-           {todos.map((todo, i) => {
-               
-               return <Todo check={check} 
-               
-               key={[i]} 
-               todo={todo}
-               handleComplete={handleComplete}
-                
-                
-               />
-           })}
-            
-            </ul>
 
+           {
+               todos.map((todo, i) => (
+               
+                <Todo 
+                    check={check}                
+                    key={i} 
+                    todo={todo}
+                    handleComplete={handleComplete}              
+                />
+                )
+            )}         
+        
         </div>
         
     )
