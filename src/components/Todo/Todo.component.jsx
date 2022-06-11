@@ -5,9 +5,15 @@ import {ReactComponent as Checkmark} from '../../images/icon-check.svg'
 
 
 
-const Todo = ({todo, check, isChecked, setTodos, handleComplete}) => {
+const Todo = ({todo, count,check, setCount,isChecked, setTodos, handleComplete}) => {
+    
     const handleCheckbox = () => {
         handleComplete(todo.id)
+        if(todo.completed) {
+           setCount(count + 1)
+        } else {
+            setCount(count - 1)
+        }
     }
     return (
     <div className='item'

@@ -19,6 +19,7 @@ const LOCAL_STORAGE_KEY = "react-todo-list-todos";
 function App() {
 
   const [todos, setTodos] = useState([]);
+  let [count, setCount] = useState(0);
   const [check, setChecked] = useState({
     isChecked: false
 });
@@ -74,22 +75,29 @@ const isChecked = (e) => {
     let checkedBox = e.target;
     
       if(checkedBox.checked) {
+        
         setChecked({check, isChecked:true})
+        
     } else {
+        
         setChecked({check, isChecked:false})
+        
     }    
     
 }
 
 const handleComplete = (id) => {
+  
   setTodos(
     todos.map(todo => {
       if(todo.id === id) {
         return {
           ...todo,
           completed:!todo.completed
+          
         }
       }
+      
       return todo
     })
   )
@@ -100,6 +108,7 @@ const handleComplete = (id) => {
 
   const addTodo = (todo) => {
     setTodos([todo, ...todos])
+    setCount(count + 1)
   }
 
   
@@ -133,6 +142,8 @@ const handleComplete = (id) => {
       addTodo={addTodo}/>
 
       <TodoList 
+      count={count}
+      setCount={setCount}
         todos={visibleTodos}
       setTodos={setTodos} 
       handleComplete={handleComplete}
@@ -140,7 +151,7 @@ const handleComplete = (id) => {
       isChecked={isChecked}
       />
       <StatusBar
-      todosLength={todos.length}
+      todosLength={count}
       check={check}
       handleAllButton={handleAllButton}
       handleCompleteButton={handleCompleteButton}
