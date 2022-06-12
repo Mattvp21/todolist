@@ -30,6 +30,7 @@ useEffect(() => {
   const storageTodos = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY));
   if (storageTodos) {
     setTodos(storageTodos);
+    
   }
 }, []);
 
@@ -37,6 +38,21 @@ useEffect(() => {
   // fires when todos array gets updated
   localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(todos));
 }, [todos]);
+
+// useEffect(() => {
+//   // fires when app component mounts to the DOM
+//   const storageCount = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY));
+//   if (storageCount) {
+//     setCount(reducedArray);
+    
+//   }
+// }, [reducedArray]);
+
+// useEffect(() => {
+//   // fires when todos array gets updated
+  
+//   localStorage.setItem(LOCAL_STORAGE_KEY);
+// }, [reducedArray])
 
 const visibleTodos = todos.filter((todo) => {
   switch (tab) {
@@ -63,6 +79,7 @@ const handleAllButton = () => {
 
 const clearCompleted = () => {
   setTodos(todos.filter((todo) => todo.completed === false))
+  
 }
 
 const isChecked = (e) => {
@@ -95,7 +112,6 @@ const handleComplete = (id) => {
       return todo
     })
   )
-<<<<<<< HEAD
 }
 
 
@@ -105,16 +121,8 @@ const handleComplete = (id) => {
     setTodos([todo, ...todos])
     setCount(count + 1)
   }
-=======
-} 
->>>>>>> 4446e0ecbea0a529fe43ced2e831321c69bc03e4
-
-const addTodo = (todo) => {
-  setTodos([todo, ...todos])
-} 
   
   return(
-<<<<<<< HEAD
   <main style={{backgroundColor: check.isChecked ? 'white' : 'hsl(235, 21%, 11%)',
                backgroundImage: check.isChecked ? `url(${lightMode})` : `url(${darkMode})`,
                 backgroundRepeat: 'no-repeat',
@@ -153,63 +161,13 @@ const addTodo = (todo) => {
       handleCompleteButton={handleCompleteButton}
       handleActiveButton={handleActiveButton}
       clearCompleted={clearCompleted}
-      />
-=======
-    <main style={{backgroundColor: check.isChecked ? 'white' : 'hsl(235, 21%, 11%)',
-                  backgroundImage: check.isChecked ? `url(${lightMode})` : `url(${darkMode})`,
-                  backgroundRepeat: 'no-repeat',
-                  backgroundPosition: '100% -20%',
-                  display: 'flex',
-                  justifyContent: 'center',
-                  transition: 'ease-in .3s'
-                  }
-                }
-    >
-    
-      <div className='wrapper'>
-              
-        <div className='container'>
-
-          <Toggle 
-            check={check}
-            setChecked={setChecked}
-            isChecked={isChecked}        
-          />
-
-          <Createtodo 
-            check={check}
-            isChecked={isChecked}
-            addTodo={addTodo}            
-          />
-
-          <TodoList 
-            todos={visibleTodos}
-            setTodos={setTodos} 
-            handleComplete={handleComplete}
-            check={check}
-            isChecked={isChecked}
-          />
-
-          <StatusBar
-            todosLength={todos.length}
-            check={check}
-            handleAllButton={handleAllButton}
-            handleCompleteButton={handleCompleteButton}
-            handleActiveButton={handleActiveButton}
-            clearCompleted={clearCompleted}
-          />
-        
-        </div>
->>>>>>> 4446e0ecbea0a529fe43ced2e831321c69bc03e4
-      
-      </div>
-
-    </main>
-    
-
+     />
+    </div> 
+  </div>
+</main>
   )
-
 }
+
 
 
 export default App;

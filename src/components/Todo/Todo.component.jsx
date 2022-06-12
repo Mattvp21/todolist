@@ -5,12 +5,8 @@ import {ReactComponent as Checkmark} from '../../images/icon-check.svg'
 
 
 
-<<<<<<< HEAD
 const Todo = ({todo, count,check, setCount,isChecked, setTodos, handleComplete}) => {
     
-=======
-const Todo = ({todo, check, handleComplete}) => {
->>>>>>> 4446e0ecbea0a529fe43ced2e831321c69bc03e4
     const handleCheckbox = () => {
         handleComplete(todo.id)
         if(todo.completed) {
