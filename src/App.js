@@ -15,6 +15,7 @@ const ALL = 0;
 const ACTIVE = 1;
 const COMPLETED = 2;
 const LOCAL_STORAGE_KEY = "react-todo-list-todos";
+const LOCAL_STORAGE_KEY_2 = "react-todo-list-count";
 
 function App() {
 
@@ -25,34 +26,21 @@ function App() {
 });
 const [tab, setTab] = useState(ALL);
 
-useEffect(() => {
-  // fires when app component mounts to the DOM
-  const storageTodos = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY));
-  if (storageTodos) {
-    setTodos(storageTodos);
-    
-  }
-}, []);
-
-useEffect(() => {
-  // fires when todos array gets updated
-  localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(todos));
-}, [todos]);
-
 // useEffect(() => {
 //   // fires when app component mounts to the DOM
-//   const storageCount = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY));
-//   if (storageCount) {
-//     setCount(reducedArray);
+//   const storageTodos = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY));
+//   if (storageTodos) {
+//     setTodos(storageTodos);
     
 //   }
-// }, [reducedArray]);
+// }, []);
 
 // useEffect(() => {
 //   // fires when todos array gets updated
-  
-//   localStorage.setItem(LOCAL_STORAGE_KEY);
-// }, [reducedArray])
+//   localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(todos));
+// }, [todos]);
+
+
 
 const visibleTodos = todos.filter((todo) => {
   switch (tab) {
