@@ -16,6 +16,7 @@ const ACTIVE = 1;
 const COMPLETED = 2;
 const LOCAL_STORAGE_KEY = "react-todo-list-todos";
 const LOCAL_STORAGE_KEY_2 = "react-todo-list-count";
+const LOCAL_STORAGE_KEY_3 = "react-todo-list-check";
 
 function App() {
 
@@ -26,19 +27,28 @@ function App() {
 });
 const [tab, setTab] = useState(ALL);
 
-// useEffect(() => {
-//   // fires when app component mounts to the DOM
-//   const storageTodos = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY));
-//   if (storageTodos) {
-//     setTodos(storageTodos);
-    
-//   }
-// }, []);
+useEffect(() => {
+  // fires when app component mounts to the DOM
+  const storageTodos = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY));
+  const countTodos = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY_2));
+  const checkCheck = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY_3))
+  if (storageTodos) {
+    setTodos(storageTodos);
+  }
+  if(countTodos) {
+    setCount(countTodos)
+  }
+  if(check) {
+    setChecked(checkCheck)
+  }
+}, []);
 
-// useEffect(() => {
-//   // fires when todos array gets updated
-//   localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(todos));
-// }, [todos]);
+useEffect(() => {
+  // fires when todos array gets updated
+  localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(todos));
+  localStorage.setItem(LOCAL_STORAGE_KEY_2, JSON.stringify(count));
+  localStorage.setItem(LOCAL_STORAGE_KEY_3, JSON.stringify(check));
+}, [todos, count, check]);
 
 
 
